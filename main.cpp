@@ -61,7 +61,7 @@ int main(int argc, const char** argv)
 	else
 	{
 		std::cout << "Content-Type: text/html\n\n";
-		std::cout << FileReader().read("./index.html") << '\n';
+		std::cout << FileReader().read("../public/home/index.html") << '\n';
 	}
 
 	return 0;
