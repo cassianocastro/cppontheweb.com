@@ -6,8 +6,7 @@ function updateDisplay(verse)
     verse = verse.replace(" ", "");
     verse = verse.toLowerCase();
 
-    fetch(`${verse}.txt`)
-
+    fetch(`../../lib/${verse}.txt`)
     .then((response) => {
         if ( ! response.ok ) {
             throw new Error(`HTTP Error: ${response.status}`);
