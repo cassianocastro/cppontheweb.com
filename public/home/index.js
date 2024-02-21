@@ -8,7 +8,7 @@ button.addEventListener("click", (e) => {
 	e.preventDefault();
 
 	fetch(
-		"http://www.mycpp.com/main.exe",
+		"http://www.cppontheweb.com/",
 		{
 			method: "post",
 			body: JSON.stringify({name: input.value})
