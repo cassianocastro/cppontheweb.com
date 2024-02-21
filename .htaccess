@@ -1,1 +1,4 @@
 DirectoryIndex bin/main.exe
+
+# RewriteEngine on
+# RewriteRule "^\/$" "bin/main.exe" [QSA]
