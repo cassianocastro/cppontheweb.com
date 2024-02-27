@@ -4,27 +4,21 @@ let input  = document.querySelector("form input");
 let button = document.querySelector("form button");
 let output = document.querySelector("form output");
 
-button.addEventListener("click", (e) => {
+button.addEventListener("click", async (e) => {
 	e.preventDefault();
 
-	fetch(
+    let response = await fetch(
 		"http://www.cppontheweb.com/",
 		{
 			method: "post",
 			body: JSON.stringify({name: input.value})
 		}
-	)
-	.then(
-		(response) => {
-			if ( response.ok )
-			{
-				return response.json();
-			}
-		}
-	)
-	.then(
-		(data) => {
-			output.textContent = `O nome digitado foi: ${data.name}`;
-		}
 	);
+
+    if ( response.ok )
+    {
+        let data = await response.json();
+
+        output.textContent = `O nome digitado foi: ${data.name}`;
+    }
 });
