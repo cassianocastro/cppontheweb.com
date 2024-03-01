@@ -2,6 +2,9 @@
 
 #define FILE_READER_HPP
 
+#include <fstream>
+#include <string>
+
 /**
  *
  */
@@ -12,34 +15,21 @@ class FileReader
 		std::fstream stream;
 
 	public:
-		FileReader()
-		{
-			this->stream;
-		}
 
-		~FileReader()
-		{
-			this->stream.close();
-		}
+        /**
+         *
+         */
+		FileReader();
 
-		std::string read(std::string filename)
-		{
-			std::string content(""), buffer("");
+        /**
+         *
+         */
+		~FileReader();
 
-			this->stream.open(filename, std::fstream::in);
-
-			if ( this->stream.is_open() )
-			{
-				while ( not this->stream.eof() )
-				{
-					getline(this->stream, buffer);
-
-					content.append(buffer);
-				}
-			}
-
-			return content;
-		}
+        /**
+         *
+         */
+		std::string read(std::string);
 };
 
 #endif
