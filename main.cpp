@@ -5,46 +5,6 @@
 /**
  *
  */
-class FileReader
-{
-
-	private:
-		std::fstream stream;
-
-	public:
-		FileReader()
-		{
-			this->stream;
-		}
-
-		~FileReader()
-		{
-			this->stream.close();
-		}
-
-		std::string read(std::string filename)
-		{
-			std::string content(""), buffer("");
-
-			this->stream.open(filename, std::fstream::in);
-
-			if ( this->stream.is_open() )
-			{
-				while ( not this->stream.eof() )
-				{
-					getline(this->stream, buffer);
-
-					content.append(buffer);
-				}
-			}
-
-			return content;
-		}
-};
-
-/**
- *
- */
 int main(int argc, const char** argv)
 {
 	std::string method { std::getenv("REQUEST_METHOD") };
