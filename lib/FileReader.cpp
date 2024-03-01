@@ -1,8 +1,8 @@
-#include "./FileReader.hpp";
+#include "./FileReader.hpp"
 
 FileReader::FileReader()
 {
-    this->stream();
+
 }
 
 FileReader::~FileReader()
