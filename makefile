@@ -1,12 +1,19 @@
 # Makefile
 
-CCFLAGS=-W -Wall -ansi -pedantic
+STD=c++17
+CC=g++
+CCFLAGS=-W -Wall -Wextra -ansi -pedantic -std=$(STD)
 
-all: main.o
-	gcc main.o -o a.out
+OBJS=main.o filereader.o
 
-main.o: main.c
-	gcc -c $(CCFLAGS) main.c
+all: $(OBJS)
+	g++ $(OBJS) -o main.exe
+
+main.o: ../main.cpp
+	$(CC) $(CCFLAGS) -c ../main.cpp -o main.o
+
+filereader.o: ../lib/FileReader.cpp
+	$(CC) $(CCFLAGS) -c ../lib/FileReader.cpp -o filereader.o
 
 clean:
 	rm -rf *.o *~
