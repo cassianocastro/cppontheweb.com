@@ -4,7 +4,7 @@
 /**
  *
  */
-int main(int argc, const char** argv)
+int main(void)
 {
 	std::string method { std::getenv("REQUEST_METHOD") };
 
