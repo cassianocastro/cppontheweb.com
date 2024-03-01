@@ -29,7 +29,7 @@ class FileReader
         /**
          *
          */
-		std::string read(std::string);
+		std::string read(const std::string&);
 };
 
 #endif

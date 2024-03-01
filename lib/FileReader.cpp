@@ -10,7 +10,7 @@ FileReader::~FileReader()
     this->stream.close();
 }
 
-std::string FileReader::read(std::string filename)
+std::string FileReader::read(const std::string& filename)
 {
     std::string content(""), buffer("");
 
